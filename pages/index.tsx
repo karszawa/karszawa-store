@@ -1,30 +1,20 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-
-// Components
+import React, { useCallback } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import DefaultLayout from '~/components/layouts/default'
+import { increment } from '~/slices/counter';
+import { RootState } from '~/slices/store';
 
-interface PageProps {
-  foo: string
-  custom: string
+export const Page: React.SFC<{}> = () => {
+  const dispatch = useDispatch();
+  const counter = useSelector((state: RootState) => state.counter.value);
+  const onClickButton = useCallback(() => dispatch(increment({ amount: 10 })), []);
+
+  return <DefaultLayout>
+    <p>Props from Redux</p>
+    <p>Props from getInitialProps</p>
+    <p>welcome to next.js!</p>
+    <button onClick={onClickButton}>Click {counter}</button>
+  </DefaultLayout>
 }
 
-class Page extends Component<PageProps> {
-  static getInitialProps({ store }) {
-    store.dispatch({ type: 'FOO', payload: 'foo' })
-
-    return { custom: 'custom', ...store.getState() }
-  }
-
-  render() {
-    return (
-      <DefaultLayout>
-        <p>Props from Redux {this.props.foo}</p>
-        <p>Props from getInitialProps {this.props.custom}</p>
-        <p>welcome to next.js!</p>
-      </DefaultLayout>
-    )
-  }
-}
-
-export default connect()(Page)
+export default Page
