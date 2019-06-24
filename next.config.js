@@ -9,7 +9,6 @@ module.exports = withTypescript({
       "~": path.resolve(__dirname, "./src")
     };
 
-    // typetyeckする
     if (options.isServer) {
       config.plugins.push(new ForkTsCheckerWebpackPlugin());
     }
