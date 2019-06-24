@@ -1,7 +1,7 @@
 import { getDefaultMiddleware, configureStore } from "redux-starter-kit";
 import logger from "redux-logger";
 import reducer from "./reducer";
-import { CounterState } from "~/slices/counter";
+import { State as CounterState } from "~/slices/counter";
 
 export interface RootState {
   counter: CounterState;

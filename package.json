@@ -7,7 +7,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix \"pages/**.tsx\" \"src/**/*.tsx\" \"src/**/*.ts\""
   },
   "author": "Hiroaki KARASAWA",
   "license": "ISC",
@@ -30,9 +31,18 @@
     "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^7.1.0",
     "@types/redux-logger": "^3.0.7",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
     "@zeit/next-typescript": "^1.1.1",
     "babel-plugin-module-resolver": "^3.2.0",
+    "eslint": "^6.0.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.0",
     "fork-ts-checker-webpack-plugin": "^1.3.7",
+    "prettier": "^1.18.2",
     "redux-devtools-extension": "^2.13.8",
     "typescript": "^3.5.2"
   },
