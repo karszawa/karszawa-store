@@ -3,20 +3,37 @@ import { useDispatch, useSelector } from "react-redux";
 import DefaultLayout from "~/components/layouts/default";
 import { increment } from "~/slices/counter";
 import { RootState } from "~/slices/store";
+import gql from "graphql-tag";
+import { useQuery } from "react-apollo";
 
-export const Page: React.SFC<{}> = () => {
+const GET_DOGS = gql`
+  {
+    user {
+      name
+    }
+  }
+`;
+
+const Page: React.SFC<{}> = () => {
   const dispatch = useDispatch();
   const counter = useSelector((state: RootState) => state.counter.value);
   const onClickButton = useCallback(
     () => dispatch(increment({ amount: 10 })),
     []
   );
+  const { data, error, loading } = useQuery(GET_DOGS);
+
+  if (loading) {
+    return <span>loading</span>;
+  }
+
+  if (error) {
+    return <span>error</span>;
+  }
 
   return (
     <DefaultLayout>
-      <p>Props from Redux</p>
-      <p>Props from getInitialProps</p>
-      <p>welcome to next.js!</p>
+      <p>Welcome {data.user.name}!</p>
       <button onClick={onClickButton}>Click {counter}</button>
     </DefaultLayout>
   );
