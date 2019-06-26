@@ -116,3 +116,5 @@ Temporary Items
 .apdisk
 
 
+tsconfig.server.json
+tsconfig.server.tsbuildinfo
