@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ellipsis } from "polished";
 import Link from "next/link";
+import { A } from "../common/Anchor";
 
 interface ItemCardProps {
   name: string;
@@ -15,14 +16,14 @@ const ItemCard: React.FC<ItemCardProps> = ({
   price
 }: ItemCardProps) => (
   <Container>
-    <Link href="">
-      <InteractiveAnchor>
-        <Img width={200} height={200} src={image.url} />
+    <Link href={`/items/${id}`}>
+      <A>
+        <Img width={200} height={200} src={image.url} alt={name} />
         {/* loading="lazy" → missing types */}
-      </InteractiveAnchor>
+      </A>
     </Link>
     <Title>
-      <InteractiveAnchor>{name}</InteractiveAnchor>
+      <A>{name}</A>
     </Title>
     <Price>¥ {price}</Price>
   </Container>

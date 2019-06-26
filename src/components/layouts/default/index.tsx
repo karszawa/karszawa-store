@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { SERVICE_NAME } from "~/constants/domain";
+import { A } from "~/components/common/Anchor";
+import Link from "next/link";
 
 interface DefaultLayoutProps {
   children: React.ReactNode;
@@ -10,7 +13,11 @@ const DefaultLayout: React.SFC<DefaultLayoutProps> = (
 ) => {
   return (
     <Container>
-      <Header>karszawa store</Header>
+      <Header>
+        <Link href="/">
+          <A>{SERVICE_NAME}</A>
+        </Link>
+      </Header>
       <Content>{props.children}</Content>
       <Footer>(c) karszawa, inc.</Footer>
     </Container>
