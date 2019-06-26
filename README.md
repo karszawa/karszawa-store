@@ -2,11 +2,13 @@
 
 You can buy karszawa goods here.
 
-## Implementation Plan
+## TODO
 
-- [ ] item list page
+- [x] item list page
 - [ ] item detail page
 - [ ] checkout page
+- [ ] Use [apollo codegen](https://github.com/apollographql/apollo-tooling)
+- [ ] Deploy
 
 Use Firestore as database?
 
@@ -28,4 +30,3 @@ Use Firestore as database?
 ## Things what I was struggled by
 
 - amp types - there are no type definitions in amp-stories
--
