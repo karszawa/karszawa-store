@@ -10,9 +10,9 @@ const DefaultLayout: React.SFC<DefaultLayoutProps> = (
 ) => {
   return (
     <Container>
-      <Header>header</Header>
+      <Header>karszawa store</Header>
       <Content>{props.children}</Content>
-      <Footer>footer</Footer>
+      <Footer>(c) karszawa, inc.</Footer>
     </Container>
   );
 };
