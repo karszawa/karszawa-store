@@ -12,6 +12,7 @@ const ItemShowcase: React.FC<Props> = ({ items }: Props) => {
   const itemCards = items.map(item => (
     <ItemCard
       key={item.id}
+      id={item.id}
       name={item.name}
       price={item.price}
       image={{

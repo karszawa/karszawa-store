@@ -5,12 +5,14 @@ import Link from "next/link";
 import { A } from "../common/Anchor";
 
 interface ItemCardProps {
+  id: string;
   name: string;
   image: { url: string };
   price: number;
 }
 
 const ItemCard: React.FC<ItemCardProps> = ({
+  id,
   name,
   image,
   price
@@ -46,15 +48,6 @@ const Container = styled.div`
 const Img = styled.img`
   object-fit: cover;
   border-radius: 4px;
-`;
-
-const InteractiveAnchor = styled.a`
-  &:hover {
-    color: #fac75a;
-    opacity: 0.7;
-    transition: all 0.2s ease-out;
-    cursor: pointer;
-  }
 `;
 
 const Title = styled.h2`
