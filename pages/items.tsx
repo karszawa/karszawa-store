@@ -2,13 +2,12 @@ import React from "react";
 import { useQuery } from "react-apollo";
 import DefaultLayout from "~/components/layouts/default";
 import ItemShowcase from "~/components/items/ItemShowcase";
-import { Data, GET_ITEMS } from "~/queries/items";
+import { GetItemsData, GET_ITEMS } from "~/queries/items";
 import Mining from "~/components/common/Mining";
 import styled from "styled-components";
 
-const Page: React.SFC<{}> = () => {
-  const { data, error, loading } = useQuery<Data>(GET_ITEMS);
 const Items: React.FC<{}> = () => {
+  const { data, error, loading } = useQuery<GetItemsData>(GET_ITEMS);
 
   if (loading) {
     return <span>loading</span>;
