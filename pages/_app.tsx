@@ -8,9 +8,9 @@ import withApolloClient from "~/lib/with-apollo-client";
 
 interface AppProps {
   Component: React.Component;
-  pageProps: any;
-  store: any;
-  apolloClient: any;
+  pageProps: any; // eslint-disable-line
+  store: any; // eslint-disable-line
+  apolloClient: any; // eslint-disable-line
 }
 
 class MyApp extends App<AppProps> {
