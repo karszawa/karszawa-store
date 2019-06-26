@@ -3,6 +3,7 @@
 import { ApolloClient, InMemoryCache, HttpLink } from "apollo-boost";
 import fetch from "isomorphic-unfetch";
 
+const BASE_URL = "https://api.graph.cool/simple/v1/cjxbffaco1vxd0193t5giyfzl";
 let apolloClient = null;
 
 function create(initialState: any = {}) {
@@ -12,7 +13,7 @@ function create(initialState: any = {}) {
     connectToDevTools: isBrowser,
     ssrMode: !isBrowser, // Disables forceFetch on the server (so queries are only run once)
     link: new HttpLink({
-      uri: "http://localhost:4000/graphql", // Server URL (must be absolute)
+      uri: BASE_URL, // Server URL (must be absolute)
       credentials: "same-origin", // Additional fetch() options like `credentials` or `headers`
       // Use fetch() polyfill on the server
       fetch: !isBrowser && fetch
