@@ -2,8 +2,8 @@
 
 import { ApolloClient, InMemoryCache, HttpLink } from "apollo-boost";
 import fetch from "isomorphic-unfetch";
+import { BASE_URL } from "~/lib/graphcool";
 
-const BASE_URL = "https://api.graph.cool/simple/v1/cjxbffaco1vxd0193t5giyfzl";
 let apolloClient = null;
 
 function create(initialState: any = {}) {
