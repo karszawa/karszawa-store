@@ -19,12 +19,18 @@ const DefaultLayout: React.SFC<DefaultLayoutProps> = (
 
 const Header = styled.header`
   font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #333;
+  padding: 8px;
+  color: white;
 `;
 
 const Footer = styled.footer`
   font-size: 10px;
   font-weight: bold;
   text-align: center;
+  padding: 16px 0;
 `;
 
 const Container = styled.div`
@@ -33,6 +39,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   flex: 1;
+  padding: 0 8px;
 `;
 
 export default DefaultLayout;

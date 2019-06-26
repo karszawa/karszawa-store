@@ -1,29 +1,13 @@
-import React, { useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import DefaultLayout from "~/components/layouts/default";
-import { increment } from "~/slices/counter";
-import { RootState } from "~/slices/store";
-import gql from "graphql-tag";
+import React from "react";
 import { useQuery } from "react-apollo";
-import ItemCard from "~/components/items/ItemCard";
-
-const GET_ITEMS = gql`
-  {
-    allItems {
-      id
-      name
-    }
-  }
-`;
+import DefaultLayout from "~/components/layouts/default";
+import ItemShowcase from "~/components/items/ItemShowcase";
+import { Data, GET_ITEMS } from "~/queries/items";
+import Mining from "~/components/common/Mining";
+import styled from "styled-components";
 
 const Page: React.SFC<{}> = () => {
-  const dispatch = useDispatch();
-  const counter = useSelector((state: RootState) => state.counter.value);
-  const onClickButton = useCallback(
-    () => dispatch(increment({ amount: 10 })),
-    []
-  );
-  const { data, error, loading } = useQuery(GET_ITEMS);
+  const { data, error, loading } = useQuery<Data>(GET_ITEMS);
 
   if (loading) {
     return <span>loading</span>;
@@ -33,17 +17,19 @@ const Page: React.SFC<{}> = () => {
     return <span>error</span>;
   }
 
-  const itemCards = data.allItems.map(item => (
-    <ItemCard key={item.id} name={item.name} />
-  ));
+  console.log(data);
 
   return (
     <DefaultLayout>
-      <h1></h1>
-      <div>{itemCards}</div>
-      <button onClick={onClickButton}>Click {counter}</button>
+      <H1>karszawa items</H1>
+      <ItemShowcase items={data.allItems} />
+      <Mining />
     </DefaultLayout>
   );
 };
+
+const H1 = styled.h1`
+  text-align: center;
+`;
 
 export default Page;
