@@ -1,8 +1,8 @@
 import React from "react";
-import Document from "next/document";
+import Document, { NextDocumentContext } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
-const ResetCSS: React.FunctionComponent<{}> = () => (
+const ResetCSS: React.FC<{}> = () => (
   <style>{`
     body { margin: 0; }
     * {
@@ -13,7 +13,7 @@ const ResetCSS: React.FunctionComponent<{}> = () => (
 );
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: any) {
+  static async getInitialProps(ctx: NextDocumentContext) {
     // with styled-components example
     // https://github.com/zeit/next.js/blob/master/examples/with-styled-components/pages/_document.js
     const sheet = new ServerStyleSheet();

@@ -8,7 +8,7 @@ interface Props {
   items: Item[];
 }
 
-const ItemShowcase: React.FunctionComponent<Props> = ({ items }: Props) => {
+const ItemShowcase: React.FC<Props> = ({ items }: Props) => {
   const itemCards = items.map(item => (
     <ItemCard
       key={item.id}

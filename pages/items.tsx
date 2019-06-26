@@ -8,6 +8,7 @@ import styled from "styled-components";
 
 const Page: React.SFC<{}> = () => {
   const { data, error, loading } = useQuery<Data>(GET_ITEMS);
+const Items: React.FC<{}> = () => {
 
   if (loading) {
     return <span>loading</span>;

@@ -9,7 +9,7 @@ interface ItemCardProps {
   price: number;
 }
 
-const ItemCard: React.FunctionComponent<ItemCardProps> = ({
+const ItemCard: React.FC<ItemCardProps> = ({
   name,
   image,
   price
