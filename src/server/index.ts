@@ -21,6 +21,10 @@ app.prepare().then(() => {
     return app.render(req, res, "/ItemsId", { id: req.params.id });
   });
 
+  server.get("/transaction/buy", (req, res) => {
+    return app.render(req, res, "/TransactionBuy", { id: req.query.itemId });
+  });
+
   server.get("*", (req, res) => {
     return handle(req, res);
   });

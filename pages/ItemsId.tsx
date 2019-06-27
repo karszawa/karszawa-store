@@ -54,7 +54,7 @@ const ItemsId: React.FC<ItemsIdProps> = ({ id }: ItemsIdProps) => {
           </Link>
         </Navigation>
         <Img src={imageUrl} alt={item.name} />
-        <Link href={`/transaction/buy/${item.id}`}>
+        <Link href={`/transaction/buy?itemId=${item.id}`}>
           <BuyA>Buy!</BuyA>
         </Link>
 
