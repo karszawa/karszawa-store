@@ -8,6 +8,7 @@ import { GetItemData, GET_ITEM } from "~/queries/items";
 import { useQuery } from "react-apollo";
 import Link from "next/link";
 import { pay } from "~/lib/payment";
+import Router from "next/router";
 
 interface TransactionBuyProps {
   id: string;
@@ -19,7 +20,7 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
   const { data, error, loading } = useQuery<GetItemData>(GET_ITEM, {
     variables: { id }
   });
-  const onClickPayButton = useCallback(() => {
+  const onClickPayButton = useCallback(async () => {
     if (loading || error) {
       // Do nothing while fetching
       return;
@@ -27,7 +28,7 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
 
     const item = data.Item;
 
-    pay({
+    await pay({
       displayItems: [
         {
           label: item.name,
@@ -37,8 +38,17 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
       total: {
         label: "Total",
         amount: { currency: "JPY", value: item.price.toString() }
-      }
+      },
+      shippingOptions: [
+        {
+          id: "standard",
+          label: "🚛 Ground Shipping (2 days)",
+          amount: { currency: "JPY", value: "270" },
+          selected: true
+        }
+      ]
     });
+    Router.push("/items");
   }, [data, error, loading]);
 
   if (loading) {

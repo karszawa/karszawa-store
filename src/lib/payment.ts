@@ -31,7 +31,13 @@ const PAYMENT_OPTIONS: PaymentOptions = {
 //   }
 // };
 
-export function pay(details: PaymentDetailsInit) {
+function wait(milliseconds: number): Promise<void> {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(), milliseconds);
+  });
+}
+
+export async function pay(details: PaymentDetailsInit) {
   const request = new PaymentRequest(METHOD_DATA, details, PAYMENT_OPTIONS);
 
   request.addEventListener(
@@ -48,18 +54,13 @@ export function pay(details: PaymentDetailsInit) {
     }
   );
 
-  request
-    .show()
-    .then(result => {
-      console.log(result);
+  const result = await request.show();
 
-      setTimeout(() => {
-        result.complete("success").then(() => {
-          alert("Payment completed!");
-        });
-      }, 2000);
-    })
-    .catch(function(err) {
-      console.error("Uh oh, something bad happened: " + err.message);
-    });
+  console.log(result);
+
+  await wait(2000);
+
+  await result.complete("success");
+
+  alert("Payment completed!");
 }
