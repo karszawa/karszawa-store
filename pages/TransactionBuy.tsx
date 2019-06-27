@@ -69,7 +69,7 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
     <DefaultLayout>
       <Head>
         <title>
-          Buy {item.name} | {SERVICE_NAME}
+          Checkout - {item.name} | {SERVICE_NAME}
         </title>
       </Head>
       <Content>

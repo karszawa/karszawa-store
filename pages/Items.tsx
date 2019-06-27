@@ -19,8 +19,6 @@ const Items: React.FC<{}> = () => {
     return <span>error</span>;
   }
 
-  console.log(data);
-
   return (
     <DefaultLayout>
       <Head>

@@ -43,7 +43,7 @@ const ItemsId: React.FC<ItemsIdProps> = ({ id }: ItemsIdProps) => {
     <DefaultLayout>
       <Head>
         <title>
-          {item.name} - {SERVICE_NAME}
+          {item.name} | {SERVICE_NAME}
         </title>
       </Head>
       <Content>
