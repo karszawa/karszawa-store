@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { SERVICE_NAME } from "~/constants/domain";
-import { A } from "~/components/common/Anchor";
+import { A, ResetA } from "~/components/common/Anchor";
 import Link from "next/link";
 
 interface DefaultLayoutProps {
@@ -19,7 +19,11 @@ const DefaultLayout: React.SFC<DefaultLayoutProps> = (
         </Link>
       </Header>
       <Content>{props.children}</Content>
-      <Footer>(c) karszawa, inc.</Footer>
+      <Footer>
+        <ResetA href="https://github.com/karszawa" target="_blank">
+          (c) karszawa, inc.
+        </ResetA>
+      </Footer>
     </Container>
   );
 };
@@ -42,6 +46,8 @@ const Footer = styled.footer`
 
 const Container = styled.div`
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Content = styled.div`

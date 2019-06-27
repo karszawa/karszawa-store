@@ -8,3 +8,12 @@ export const A = styled.a`
     cursor: pointer;
   }
 `;
+
+export const ResetA = styled.a`
+  text-decoration: none;
+  color: #333;
+
+  &:visited {
+    color: #333;
+  }
+`;
