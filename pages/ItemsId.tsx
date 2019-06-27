@@ -33,8 +33,6 @@ const ItemsId: React.FC<ItemsIdProps> = ({ id }: ItemsIdProps) => {
     return <span>(404)</span>;
   }
 
-  console.log(data);
-
   const imageUrl = getImageUrl({
     secret: item.file.secret,
     filename: item.name,
@@ -56,6 +54,10 @@ const ItemsId: React.FC<ItemsIdProps> = ({ id }: ItemsIdProps) => {
           </Link>
         </Navigation>
         <Img src={imageUrl} alt={item.name} />
+        <Link href={`/transaction/buy/${item.id}`}>
+          <BuyA>Buy!</BuyA>
+        </Link>
+
         <Description>{item.description}</Description>
       </Content>
     </DefaultLayout>
@@ -82,6 +84,21 @@ const Navigation = styled.p``;
 const Img = styled.img`
   border: 2px solid #eee;
   border-radius: 8px;
+`;
+
+const BuyA = styled(A)`
+  text-align: center;
+  font-size: 32px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  margin-top: 16px;
+
+  &:hover {
+    color: white;
+    background-color: #333;
+    font-weight: bold;
+    opacity: 1;
+  }
 `;
 
 const Description = styled.p`
