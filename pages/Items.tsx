@@ -24,7 +24,7 @@ const Items: React.FC<{}> = () => {
   return (
     <DefaultLayout>
       <Head>
-        <title>items - {SERVICE_NAME}</title>
+        <title>items | {SERVICE_NAME}</title>
       </Head>
       <H1>items</H1>
       <ItemShowcase items={data.allItems} />
