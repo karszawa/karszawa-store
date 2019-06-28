@@ -9,6 +9,8 @@ import { useQuery } from "react-apollo";
 import Link from "next/link";
 import { pay } from "~/lib/payment";
 import Router from "next/router";
+import ItemThumbnailCard from "~/components/items/ItemThumbnaiCardl";
+import { getImageUrl } from "~/lib/graphcool";
 
 interface TransactionBuyProps {
   id: string;
@@ -77,7 +79,17 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
         <Link href={`/items/${item.id}`}>
           <a>Back to the detail</a>
         </Link>
-        <p>Please fill the form or ...</p>
+        <ItemThumbnailCard
+          name={item.name}
+          price={item.price}
+          image={{
+            url: getImageUrl({
+              secret: item.file.secret,
+              filename: item.name,
+              size: "500x500"
+            })
+          }}
+        />
         <button onClick={onClickPayButton}>Pay</button>
       </Content>
     </DefaultLayout>
@@ -90,6 +102,9 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
   };
 };
 
-const Content = styled.div``;
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export default TransactionBuy;

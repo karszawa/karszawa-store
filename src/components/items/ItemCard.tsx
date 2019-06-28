@@ -20,7 +20,7 @@ const ItemCard: React.FC<ItemCardProps> = ({
   <Container>
     <Link href={`/items/${id}`}>
       <A>
-        <Img width={200} height={200} src={image.url} alt={name} />
+        <Img src={image.url} alt={name} />
         {/* loading="lazy" → missing types */}
       </A>
     </Link>
@@ -36,16 +36,13 @@ export default ItemCard;
 const Container = styled.div`
   padding: 4px;
   border-radius: 4px;
-  width: 40%;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
-  margin-bottom: 16px;
-
-  &:nth-child(odd) {
-    margin-right: 16px;
-  }
+  margin: 10px;
 `;
 
 const Img = styled.img`
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 4px;
 `;
@@ -65,3 +62,5 @@ const Price = styled.span`
   margin: 4px 4px;
   font-size: 12px;
 `;
+
+export const ItemCardLoading: React.FC<{}> = () => <Container></Container>;
