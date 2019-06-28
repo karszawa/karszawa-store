@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "10.x.x"
+  },
   "scripts": {
     "dev": "nodemon --watch ./src/server ./src/server/index.ts",
     "build": "next build && tsc --project tsconfig.server.json",
+    "now-build": "npm run build",
     "start": "node ./.next/production-server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix \"pages/**.tsx\" \"src/**/*.tsx\" \"src/**/*.ts\""
@@ -14,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "apollo-boost": "^0.4.3",
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "graphql": "^14.3.1",
     "graphql-tag": "^2.10.1",
@@ -32,6 +37,7 @@
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
+    "@types/compression": "0.0.36",
     "@types/express": "^4.17.0",
     "@types/next": "^8.0.5",
     "@types/next-redux-wrapper": "^2.0.2",
@@ -47,6 +53,8 @@
     "apollo": "^2.14.1",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-styled-components": "^1.10.2",
+    "brotli-webpack-plugin": "^1.1.0",
+    "compression-webpack-plugin": "^3.0.0",
     "eslint": "^6.0.0",
     "eslint-config-prettier": "^5.0.0",
     "eslint-import-resolver-alias": "^1.1.2",
