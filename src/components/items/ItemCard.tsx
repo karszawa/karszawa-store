@@ -67,14 +67,32 @@ const Price = styled.span`
 export const ItemCardLoading: React.FC<{}> = () => (
   <Container>
     <LoadingImg />
-    <Title>Name</Title>
-    <Price>Price</Price>
+    <LoadingTitle>name</LoadingTitle>
+    <LoadingPrice>price</LoadingPrice>
   </Container>
 );
+
+const loadingProps = {
+  color: "transparent",
+  backgroundColor: "#eee"
+};
 
 const LoadingImg = styled.div`
   width: 200px;
   height: 200px;
   border-radius: 4px;
-  background-color: #eee;
+  ${loadingProps}
+`;
+
+const LoadingTitle = styled.div`
+  margin: 8px 4px;
+  font-size: 12px;
+  ${loadingProps}
+`;
+
+const LoadingPrice = styled.div`
+  margin: 8px 4px;
+  width: 40%;
+  font-size: 12px;
+  ${loadingProps};
 `;
