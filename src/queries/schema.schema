@@ -1,0 +1,44 @@
+﻿type File @model {
+  contentType: String!
+  createdAt: DateTime!
+  id: ID! @isUnique
+  name: String!
+  secret: String! @isUnique
+  size: Int!
+  updatedAt: DateTime!
+  url: String! @isUnique
+  item: Item @relation(name: "ItemOnFile")
+}
+
+type User @model {
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  transactions: [Transaction!]! @relation(name: "TransactionOnUser")
+}
+
+type Item @model {
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  transactionItemUnit: TransactionItemUnit @relation(name: "TransactionItemUnitOnItem")
+  file: File! @relation(name: "ItemOnFile")
+  price: Int!
+  description: String
+}
+
+type Transaction @model {
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  transactionItemUnits: [TransactionItemUnit!]! @relation(name: "TransactionItemUnitOnTransaction")
+  user: User @relation(name: "TransactionOnUser")
+}
+
+type TransactionItemUnit @model {
+  count: Int!
+  id: ID! @isUnique
+  items: [Item!]! @relation(name: "TransactionItemUnitOnItem")
+  transaction: Transaction @relation(name: "TransactionItemUnitOnTransaction")
+}

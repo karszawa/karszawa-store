@@ -5,25 +5,35 @@ You can buy karszawa goods here.
 ## TODO
 
 - [x] item list page
-- [ ] item detail page
-- [ ] checkout page
+- [x] item detail page
+- [x] checkout page
 - [ ] Use [apollo codegen](https://github.com/apollographql/apollo-tooling)
 - [ ] Deploy
-
-Use Firestore as database?
+- [ ] Document
+- [ ] Test
 
 ## Tech Stack
+
+### Frontend
 
 - React
 - Next
 - TypeScript
 - styled-components
 - ApolloClient
-- Graphcool
-- Redux
+- ~~Redux~~
 - Advanced
-  - Portals for transition from item detail to checkout page
-  - amp-stories for item list
-  - Web Payment API for filling the form
-  - comlink (for what?)
-  - perception-toolkit (for what?)
+  - [ ] Portals for transition from item detail to checkout page
+  - [ ] amp-stories for item list
+  - [x] Web Payment API for filling the form
+  - [ ] comlink (for what?)
+  - [ ] perception-toolkit (for what?)
+
+### Backend
+
+- Graphcool as GraphQL server and datastore.
+
+## 難しかったこと
+
+- GraphQL のモックテストどうやる？
+- GraphQL のクエリの型付
