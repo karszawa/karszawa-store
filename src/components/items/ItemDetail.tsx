@@ -1,5 +1,4 @@
 import React from "react";
-import { GetItemData } from "~/queries/items";
 import { getImageUrl } from "~/lib/graphcool";
 import styled from "styled-components";
 import { A } from "../common/Anchor";
@@ -7,25 +6,32 @@ import Link from "next/link";
 import { fakeText, LoadingSpan } from "~/styles/loading";
 
 interface ItemDetailProps {
-  data: GetItemData;
+  id: string;
+  name: string;
+  description: string;
+  file: { secret: string };
 }
 
-const ItemDetail: React.FC<ItemDetailProps> = ({ data }: ItemDetailProps) => {
-  const item = data.Item;
+const ItemDetail: React.FC<ItemDetailProps> = ({
+  id,
+  name,
+  description,
+  file
+}: ItemDetailProps) => {
   const imageUrl = getImageUrl({
-    secret: item.file.secret,
-    filename: item.name,
+    secret: file.secret,
+    filename: name,
     size: "500x500"
   });
 
   return (
     <Container>
-      <H1>{item.name}</H1>
-      <Img src={imageUrl} alt={item.name} />
-      <Link href={`/transaction/buy?itemId=${item.id}`}>
+      <H1>{name}</H1>
+      <Img src={imageUrl} alt={name} />
+      <Link href={`/transaction/buy?itemId=${id}`}>
         <BuyA>Buy!</BuyA>
       </Link>
-      <Description>{item.description}</Description>
+      <Description>{description}</Description>
     </Container>
   );
 };

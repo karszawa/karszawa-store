@@ -37,6 +37,10 @@ function wait(milliseconds: number): Promise<void> {
   });
 }
 
+/*
+  Should not use PaymentRequest directly.
+  Should define interface
+*/
 export async function pay(details: PaymentDetailsInit) {
   const request = new PaymentRequest(METHOD_DATA, details, PAYMENT_OPTIONS);
 
@@ -58,9 +62,8 @@ export async function pay(details: PaymentDetailsInit) {
 
   console.log(result);
 
+  // Mock some time-consuming task such as calling payment API
   await wait(2000);
 
   await result.complete("success");
-
-  alert("Payment completed!");
 }

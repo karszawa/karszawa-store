@@ -28,12 +28,12 @@ const ItemsId: React.FC<ItemsIdProps> = ({ id }: ItemsIdProps) => {
     return <span>(404)</span>;
   }
 
+  const item = data && data.Item;
+
   return (
     <DefaultLayout>
       <Head>
-        <title>
-          {data.Item ? `${data.Item.name} | ${SERVICE_NAME}` : SERVICE_NAME}
-        </title>
+        <title>{item ? `${item.name} | ${SERVICE_NAME}` : SERVICE_NAME}</title>
       </Head>
       <Content>
         <Navigation>
@@ -44,7 +44,18 @@ const ItemsId: React.FC<ItemsIdProps> = ({ id }: ItemsIdProps) => {
             </A>
           </Link>
         </Navigation>
-        {loading ? <ItemDetailLoading /> : <ItemDetail data={data} />}
+        {loading ? (
+          <ItemDetailLoading />
+        ) : (
+          item && (
+            <ItemDetail
+              id={item.id}
+              name={item.name}
+              description={item.description}
+              file={item.file}
+            />
+          )
+        )}
       </Content>
     </DefaultLayout>
   );

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Anchor 1`] = `
+<DocumentFragment>
+  <a
+    class="Anchor__A-xh1dxk-0 kwIQeY"
+    href="https://mercari.com/jp"
+  >
+    top
+  </a>
+</DocumentFragment>
+`;

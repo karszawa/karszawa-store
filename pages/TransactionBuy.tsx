@@ -52,6 +52,9 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
         }
       ]
     });
+    alert("Payment completed!");
+    // Should move to purchase completion page
+    // but there are no page which corresponds to it...
     Router.push("/items");
   }, [data, error, loading]);
 
