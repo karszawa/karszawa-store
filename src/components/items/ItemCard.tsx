@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ellipsis } from "polished";
 import Link from "next/link";
 import { A } from "../common/Anchor";
+import { LoadingSpan } from "~/styles/loading";
 
 interface ItemCardProps {
   id: string;
@@ -67,8 +68,12 @@ const Price = styled.span`
 export const ItemCardLoading: React.FC<{}> = () => (
   <Container>
     <LoadingImg />
-    <LoadingTitle>name</LoadingTitle>
-    <LoadingPrice>price</LoadingPrice>
+    <Title>
+      <LoadingSpan>awesome item</LoadingSpan>
+    </Title>
+    <Price>
+      <LoadingSpan>5000 jpy</LoadingSpan>
+    </Price>
   </Container>
 );
 
@@ -82,17 +87,4 @@ const LoadingImg = styled.div`
   height: 200px;
   border-radius: 4px;
   ${loadingProps}
-`;
-
-const LoadingTitle = styled.div`
-  margin: 8px 4px;
-  font-size: 12px;
-  ${loadingProps}
-`;
-
-const LoadingPrice = styled.div`
-  margin: 8px 4px;
-  width: 40%;
-  font-size: 12px;
-  ${loadingProps};
 `;

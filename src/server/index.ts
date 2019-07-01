@@ -29,6 +29,8 @@ app.prepare().then(() => {
     return app.render(req, res, "/TransactionBuy", { id: req.query.itemId });
   });
 
+  server.use("/public", express.static("public"));
+
   server.get("*", (req, res) => {
     return handle(req, res);
   });

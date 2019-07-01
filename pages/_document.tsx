@@ -34,6 +34,11 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
+        ),
+        head: (
+          <>
+            <link rel="icon" type="image/png" href="/public/favicon.png" />
+          </>
         )
       };
     } finally {

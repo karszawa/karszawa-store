@@ -14,11 +14,12 @@ Use Firestore as database?
 
 ## Tech Stack
 
-- React (Mainly in hooks)
+- React
 - Next
 - TypeScript
 - styled-components
-- Material-UI
+- ApolloClient
+- Graphcool
 - Redux
 - Advanced
   - Portals for transition from item detail to checkout page
@@ -26,7 +27,3 @@ Use Firestore as database?
   - Web Payment API for filling the form
   - comlink (for what?)
   - perception-toolkit (for what?)
-
-## Things what I was struggled by
-
-- amp types - there are no type definitions in amp-stories

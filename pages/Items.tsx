@@ -21,7 +21,7 @@ const Items: React.FC<{}> = () => {
         <title>items | {SERVICE_NAME}</title>
       </Head>
       <H1>items</H1>
-      <ItemShowcase items={data.allItems || []} loading={loading} />
+      <ItemShowcase items={(data && data.allItems) || []} loading={loading} />
       <Mining />
     </DefaultLayout>
   );
