@@ -9,6 +9,7 @@ import { SERVICE_NAME } from "~/constants/domain";
 import styled from "styled-components";
 import { A } from "~/components/common/Anchor";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface ItemsIdProps {
   id: string;
@@ -50,7 +51,10 @@ const ItemsId: React.FC<ItemsIdProps> = ({ id }: ItemsIdProps) => {
         <H1>{item.name}</H1>
         <Navigation>
           <Link href="/items" as="/items">
-            <A>&lt; Back to the list</A>
+            <A>
+              <FontAwesomeIcon icon="chevron-left" />
+              &nbsp; Back to the list
+            </A>
           </Link>
         </Navigation>
         <Img src={imageUrl} alt={item.name} />
@@ -87,7 +91,7 @@ const Img = styled.img`
 `;
 
 const BuyA = styled(A)`
-  text-align: center;
+  justify-content: center;
   font-size: 32px;
   border: 1px solid #333;
   border-radius: 4px;

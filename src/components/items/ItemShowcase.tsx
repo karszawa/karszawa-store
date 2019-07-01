@@ -1,14 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import ItemCard from "./ItemCard";
+import ItemCard, { ItemCardLoading } from "./ItemCard";
 import { getImageUrl } from "~/lib/graphcool";
 import { Item } from "~/queries/items";
 
 interface Props {
   items: Item[];
+  loading: boolean;
 }
 
-const ItemShowcase: React.FC<Props> = ({ items }: Props) => {
+const ItemShowcase: React.FC<Props> = ({ items, loading }: Props) => {
+  if (loading) {
+    const itemCards = new Array(8)
+      .fill(0)
+      .map((_, j) => <ItemCardLoading key={j} />);
+
+    return <ItemContainer>{itemCards}</ItemContainer>;
+  }
+
   const itemCards = items.map(item => (
     <ItemCard
       key={item.id}

@@ -11,6 +11,8 @@ import { pay } from "~/lib/payment";
 import Router from "next/router";
 import ItemThumbnailCard from "~/components/items/ItemThumbnaiCardl";
 import { getImageUrl } from "~/lib/graphcool";
+import { A } from "~/components/common/Anchor";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface TransactionBuyProps {
   id: string;
@@ -75,9 +77,12 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
         </title>
       </Head>
       <Content>
-        <h1>Checkout</h1>
+        <H1>Checkout</H1>
         <Link href={`/items/${item.id}`}>
-          <a>Back to the detail</a>
+          <A>
+            <FontAwesomeIcon icon="chevron-left" />
+            &nbsp; Back to the detail
+          </A>
         </Link>
         <ItemThumbnailCard
           name={item.name}
@@ -105,6 +110,10 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const H1 = styled.h1`
+  text-align: center;
 `;
 
 export default TransactionBuy;

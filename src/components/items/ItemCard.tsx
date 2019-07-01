@@ -11,25 +11,26 @@ interface ItemCardProps {
   price: number;
 }
 
-const ItemCard: React.FC<ItemCardProps> = ({
-  id,
-  name,
-  image,
-  price
-}: ItemCardProps) => (
-  <Container>
-    <Link href={`/items/${id}`}>
-      <A>
-        <Img src={image.url} alt={name} />
-        {/* loading="lazy" → missing types */}
-      </A>
-    </Link>
-    <Title>
-      <A>{name}</A>
-    </Title>
-    <Price>¥ {price}</Price>
-  </Container>
-);
+const ItemCard: React.FC<ItemCardProps> = (props: ItemCardProps) => {
+  const { id, image, name, price } = props;
+
+  return (
+    <Container>
+      <Link href={`/items/${id}`}>
+        <A>
+          <Img src={image.url} alt={name} />
+          {/* loading="lazy" → missing types */}
+        </A>
+      </Link>
+      <Title>
+        <Link href={`/items/${id}`}>
+          <A>{name}</A>
+        </Link>
+      </Title>
+      <Price>¥ {price}</Price>
+    </Container>
+  );
+};
 
 export default ItemCard;
 
@@ -63,4 +64,17 @@ const Price = styled.span`
   font-size: 12px;
 `;
 
-export const ItemCardLoading: React.FC<{}> = () => <Container></Container>;
+export const ItemCardLoading: React.FC<{}> = () => (
+  <Container>
+    <LoadingImg />
+    <Title>Name</Title>
+    <Price>Price</Price>
+  </Container>
+);
+
+const LoadingImg = styled.div`
+  width: 200px;
+  height: 200px;
+  border-radius: 4px;
+  background-color: #eee;
+`;

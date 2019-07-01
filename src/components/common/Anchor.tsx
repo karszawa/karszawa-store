@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const A = styled.a`
+  display: flex;
+  align-items: center;
+
   &:hover {
     color: #fac75a;
     opacity: 0.7;

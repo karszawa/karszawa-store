@@ -11,10 +11,6 @@ import { SERVICE_NAME } from "~/constants/domain";
 const Items: React.FC<{}> = () => {
   const { data, error, loading } = useQuery<GetItemsData>(GET_ITEMS);
 
-  if (loading) {
-    return <span>loading</span>;
-  }
-
   if (error) {
     return <span>error</span>;
   }
@@ -25,7 +21,7 @@ const Items: React.FC<{}> = () => {
         <title>items | {SERVICE_NAME}</title>
       </Head>
       <H1>items</H1>
-      <ItemShowcase items={data.allItems} />
+      <ItemShowcase items={data.allItems || []} loading={loading} />
       <Mining />
     </DefaultLayout>
   );

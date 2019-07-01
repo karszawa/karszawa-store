@@ -5,6 +5,7 @@ import { ApolloProvider } from "react-apollo";
 import withRedux from "next-redux-wrapper";
 import { createStore } from "~/slices/store";
 import withApolloClient from "~/lib/with-apollo-client";
+import "~/lib/fontawesome";
 
 interface AppProps {
   Component: React.Component;
