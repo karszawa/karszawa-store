@@ -9,7 +9,7 @@ import styled from "styled-components";
 import ItemDetail, {
   ItemDetailLoading
 } from "~/components/common/items/ItemDetail";
-import BackNavigation from "./components/common/BackNavigation";
+import BackNavigation from "~/components/common/BackNavigation";
 
 interface ItemsIdProps {
   id: string;

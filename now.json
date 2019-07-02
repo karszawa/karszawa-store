@@ -5,9 +5,7 @@
     { "src": "public", "use": "@now/static" }
   ],
   "routes": [
-    { "src": "/items", "dest": "/items" },
     { "src": "/items/(?<id>[^/]+)$", "dest": "/items-id?id=$id" },
-    { "src": "/transaction/buy", "dest": "/transaction-buy" },
-    { "src": "/(.*)", "dest": "$1" }
+    { "src": "/transaction/buy", "dest": "/transaction-buy" }
   ]
 }
