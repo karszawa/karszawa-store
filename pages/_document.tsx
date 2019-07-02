@@ -37,7 +37,7 @@ export default class MyDocument extends Document {
         ),
         head: (
           <>
-            <link rel="icon" type="image/png" href="/public/favicon.png" />
+            <link rel="icon" type="image/png" href="/favicon.png" />
           </>
         )
       };

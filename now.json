@@ -5,10 +5,11 @@
   },
   "builds": [
     { "src": "package.json", "use": "@now/next" },
-    { "src": "public", "use": "@now/static" }
+    { "src": "public/**", "use": "@now/static" }
   ],
   "routes": [
     { "src": "/items/(?<id>[^/]+)$", "dest": "/items-id?id=$id" },
-    { "src": "/transaction/buy", "dest": "/transaction-buy" }
+    { "src": "/transaction/buy", "dest": "/transaction-buy" },
+    { "src": "/public/(.*)", "dest": "public/$1" }
   ]
 }
