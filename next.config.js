@@ -3,6 +3,7 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const path = require("path");
 
 module.exports = withTypescript({
+  target: "serverless",
   webpack(config, options) {
     config.resolve.alias = {
       ...config.resolve.alias,
