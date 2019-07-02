@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { ellipsis } from "polished";
 import Link from "next/link";
 import { A } from "../Anchor";
 import { LoadingSpan } from "~/styles/loading";
@@ -50,7 +49,6 @@ const Img = styled.img`
 `;
 
 const Title = styled.h2`
-  /* ${ellipsis("auto")} */
   width: auto;
   padding: 12px 12px 0;
   margin: 4px 4px 0;

@@ -106,7 +106,7 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
 
 (TransactionBuy as any).getInitialProps = (ctx: NextContext) => {
   return {
-    id: ctx.query.id
+    id: ctx.query.itemId
   };
 };
 
