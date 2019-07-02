@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-apollo";
 import DefaultLayout from "~/components/layouts/default";
-import ItemShowcase from "~/components/items/ItemShowcase";
+import ItemShowcase from "~/components/common/items/ItemShowcase";
 import { GetItemsData, GET_ITEMS } from "~/queries/items";
 import Mining from "~/components/common/Mining";
 import styled from "styled-components";

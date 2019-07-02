@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ItemDetail 1`] = `
+<DocumentFragment>
+  <article
+    class="ItemDetail__Container-sc-1ulk2l1-0 EToxH"
+  >
+    <h1
+      class="ItemDetail__H1-sc-1ulk2l1-1 khVAR"
+    >
+      card
+    </h1>
+    <img
+      alt="card"
+      class="ItemDetail__Img-sc-1ulk2l1-2 xKYnk"
+      src="https://images.graph.cool/v1/cjxbffaco1vxd0193t5giyfzl/foo/500x500/card"
+    />
+    <a
+      class="Anchor__A-xh1dxk-0 ItemDetail__BuyA-sc-1ulk2l1-3 kFZtWn"
+    >
+      Buy!
+    </a>
+    <p
+      class="ItemDetail__Description-sc-1ulk2l1-4 haRufg"
+    >
+      awesome product
+    </p>
+  </article>
+</DocumentFragment>
+`;

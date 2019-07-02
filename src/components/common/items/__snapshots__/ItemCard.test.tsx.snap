@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ItemCard 1`] = `
+<DocumentFragment>
+  <div
+    class="ItemCard__Container-sc-1q0s1v2-0 gUlvxN"
+  >
+    <a
+      class="Anchor__A-xh1dxk-0 kwIQeY"
+    >
+      <img
+        alt="card"
+        class="ItemCard__Img-sc-1q0s1v2-1 dJeIyy"
+        src="http://placekitten.com/200/300"
+      />
+    </a>
+    <h2
+      class="ItemCard__Title-sc-1q0s1v2-2 htacMv"
+    >
+      <a
+        class="Anchor__A-xh1dxk-0 kwIQeY"
+      >
+        card
+      </a>
+    </h2>
+    <span
+      class="ItemCard__Price-sc-1q0s1v2-3 cXtmZp"
+    >
+      ¥ 1234
+    </span>
+  </div>
+</DocumentFragment>
+`;

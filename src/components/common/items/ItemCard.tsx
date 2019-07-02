@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ellipsis } from "polished";
 import Link from "next/link";
-import { A } from "../common/Anchor";
+import { A } from "../Anchor";
 import { LoadingSpan } from "~/styles/loading";
 
 interface ItemCardProps {

@@ -9,7 +9,9 @@ import styled from "styled-components";
 import { A } from "~/components/common/Anchor";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ItemDetail, { ItemDetailLoading } from "~/components/items/ItemDetail";
+import ItemDetail, {
+  ItemDetailLoading
+} from "~/components/common/items/ItemDetail";
 
 interface ItemsIdProps {
   id: string;

@@ -1,7 +1,7 @@
 import React from "react";
 import { getImageUrl } from "~/lib/graphcool";
 import styled from "styled-components";
-import { A } from "../common/Anchor";
+import { A } from "../Anchor";
 import Link from "next/link";
 import { fakeText, LoadingSpan } from "~/styles/loading";
 
