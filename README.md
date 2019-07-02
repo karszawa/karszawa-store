@@ -48,7 +48,7 @@ now
 - [x] checkout page
 - [ ] Use [apollo codegen](https://github.com/apollographql/apollo-tooling)
 - [x] Deploy
-- [ ] Document
+- [x] Document
 - [x] Test
 
 ## 難しかったこと
