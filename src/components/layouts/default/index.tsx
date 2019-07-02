@@ -20,7 +20,11 @@ const DefaultLayout: React.SFC<DefaultLayoutProps> = (
       </Header>
       <Content>{props.children}</Content>
       <Footer>
-        <ResetA href="https://github.com/karszawa" target="_blank">
+        <ResetA
+          href="https://github.com/karszawa"
+          target="_blank"
+          rel="noopener"
+        >
           (c) karszawa, inc.
         </ResetA>
       </Footer>
