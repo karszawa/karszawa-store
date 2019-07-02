@@ -11,7 +11,7 @@ interface Props {
 
 const ItemShowcase: React.FC<Props> = ({ items, loading }: Props) => {
   if (loading) {
-    const itemCards = new Array(10)
+    const itemCards = new Array(30)
       .fill(0)
       .map((_, j) => <ItemCardLoading key={j} />);
 
