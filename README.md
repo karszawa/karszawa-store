@@ -15,12 +15,7 @@ https://karszawa-store.siqvare.now.sh
 - ApolloClient
 - Jest
 - ~~Redux~~
-- Advanced
-  - [ ] Portals for transition from item detail to checkout page
-  - [ ] amp-stories for item list
-  - [x] Web Payment API for filling the form
-  - [ ] comlink (for what?)
-  - [ ] perception-toolkit (for what?)
+- Web Payment API for filling the form
 
 ### Backend
 
