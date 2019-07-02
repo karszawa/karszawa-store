@@ -2,15 +2,17 @@
 
 You can buy karszawa goods here.
 
+https://karszawa-store.siqvare.now.sh
+
 ## TODO
 
 - [x] item list page
 - [x] item detail page
 - [x] checkout page
 - [ ] Use [apollo codegen](https://github.com/apollographql/apollo-tooling)
-- [ ] Deploy
+- [x] Deploy
 - [ ] Document
-- [ ] Test
+- [x] Test
 
 ## Tech Stack
 
@@ -31,9 +33,11 @@ You can buy karszawa goods here.
 
 ### Backend
 
+- Hosted on now.sh
 - Graphcool as GraphQL server and datastore.
 
 ## 難しかったこと
 
 - GraphQL のモックテストどうやる？
 - GraphQL のクエリの型付
+- now.shでホストすればNextのserverいらないということになかなか気づけなかった
