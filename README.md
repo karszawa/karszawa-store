@@ -4,16 +4,6 @@ You can buy karszawa goods here.
 
 https://karszawa-store.siqvare.now.sh
 
-## TODO
-
-- [x] item list page
-- [x] item detail page
-- [x] checkout page
-- [ ] Use [apollo codegen](https://github.com/apollographql/apollo-tooling)
-- [x] Deploy
-- [ ] Document
-- [x] Test
-
 ## Tech Stack
 
 ### Frontend
@@ -23,6 +13,7 @@ https://karszawa-store.siqvare.now.sh
 - TypeScript
 - styled-components
 - ApolloClient
+- Jest
 - ~~Redux~~
 - Advanced
   - [ ] Portals for transition from item detail to checkout page
@@ -35,6 +26,35 @@ https://karszawa-store.siqvare.now.sh
 
 - Hosted on now.sh
 - Graphcool as GraphQL server and datastore.
+
+## Development
+
+```
+npm i
+npm run dev
+```
+
+## Test
+
+```
+npm run test
+```
+
+## Deploy
+
+```
+now
+```
+
+## TODO
+
+- [x] item list page
+- [x] item detail page
+- [x] checkout page
+- [ ] Use [apollo codegen](https://github.com/apollographql/apollo-tooling)
+- [x] Deploy
+- [ ] Document
+- [x] Test
 
 ## 難しかったこと
 
