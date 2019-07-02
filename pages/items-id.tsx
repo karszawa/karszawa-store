@@ -6,12 +6,10 @@ import { NextContext } from "next";
 import Head from "next/head";
 import { SERVICE_NAME } from "~/constants/domain";
 import styled from "styled-components";
-import { A } from "~/components/common/Anchor";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ItemDetail, {
   ItemDetailLoading
 } from "~/components/common/items/ItemDetail";
+import BackNavigation from "./components/common/BackNavigation";
 
 interface ItemsIdProps {
   id: string;
@@ -38,14 +36,7 @@ const ItemsId: React.FC<ItemsIdProps> = ({ id }: ItemsIdProps) => {
         <title>{item ? `${item.name} | ${SERVICE_NAME}` : SERVICE_NAME}</title>
       </Head>
       <Content>
-        <Navigation>
-          <Link href="/items" as="/items">
-            <A>
-              <FontAwesomeIcon icon="chevron-left" />
-              &nbsp; Back to the list
-            </A>
-          </Link>
-        </Navigation>
+        <BackNavigation href="/items" text="Back to the list" />
         {loading ? (
           <ItemDetailLoading />
         ) : (
@@ -73,7 +64,5 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-const Navigation = styled.p``;
 
 export default ItemsId;
