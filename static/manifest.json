@@ -1,0 +1,21 @@
+{
+  "short_name": "kszw-str",
+  "name": "karszawa store",
+  "icons": [
+    {
+      "src": "/static/favicon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/static/favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/maps/",
+  "theme_color": "#3367D6"
+}
