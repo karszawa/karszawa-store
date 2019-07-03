@@ -17,6 +17,7 @@ https://karszawa-store.siqvare.now.sh
 - Redux (I wanted to use apollo for the local state management)
 - Web Payment API for filling the form
 - quicklinks
+- Cache by ServiceWorker (powered by WorkBox)
 
 ### Backend
 
