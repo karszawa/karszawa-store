@@ -108,7 +108,7 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
           ) : (
             <span>
               You have only {counter} KZC.{" "}
-              <Link href="/mine">
+              <Link href="/mine" passHref>
                 <LinkText>Go to the mine and do mining.</LinkText>
               </Link>
             </span>

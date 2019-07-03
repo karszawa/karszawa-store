@@ -16,14 +16,14 @@ const ItemCard: React.FC<ItemCardProps> = (props: ItemCardProps) => {
 
   return (
     <Container>
-      <Link href={`/items/${id}`}>
+      <Link href={`/items/${id}`} passHref>
         <A>
           <Img src={image.url} alt={name} />
           {/* loading="lazy" → missing types */}
         </A>
       </Link>
       <Title>
-        <Link href={`/items/${id}`}>
+        <Link href={`/items/${id}`} passHref>
           <A>{name}</A>
         </Link>
       </Title>
