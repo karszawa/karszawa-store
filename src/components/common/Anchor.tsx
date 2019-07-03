@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const A = styled.a`
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: #000;
 
   &:hover {
     color: #fac75a;

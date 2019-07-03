@@ -14,7 +14,7 @@ const DefaultLayout: React.SFC<DefaultLayoutProps> = (
   return (
     <Container>
       <Header>
-        <Link href="/">
+        <Link href="/" passHref>
           <StyledA>{SERVICE_NAME}</StyledA>
         </Link>
       </Header>
@@ -42,6 +42,7 @@ const Header = styled.header`
 `;
 
 const StyledA = styled(A)`
+  color: white;
   justify-content: center;
 `;
 
