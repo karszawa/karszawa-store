@@ -1,5 +1,11 @@
 import React from "react";
-import Document, { NextDocumentContext } from "next/document";
+import Document, {
+  NextDocumentContext,
+  Html,
+  Main,
+  Head,
+  NextScript
+} from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 const ResetCSS: React.FC<{}> = () => (
@@ -44,5 +50,17 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  render() {
+    return (
+      <Html lang="en">
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }
