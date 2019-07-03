@@ -3,7 +3,6 @@ import { useQuery } from "react-apollo";
 import DefaultLayout from "~/components/layouts/default";
 import ItemShowcase from "~/components/common/items/ItemShowcase";
 import { GetItemsData, GET_ITEMS } from "~/queries/items";
-import Mining from "~/components/common/Mining";
 import styled from "styled-components";
 import Head from "next/head";
 import { SERVICE_NAME } from "~/constants/domain";
@@ -22,7 +21,6 @@ const Items: React.FC<{}> = () => {
       </Head>
       <H1>items</H1>
       <ItemShowcase items={(data && data.allItems) || []} loading={loading} />
-      <Mining />
     </DefaultLayout>
   );
 };

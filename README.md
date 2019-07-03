@@ -14,7 +14,7 @@ https://karszawa-store.siqvare.now.sh
 - styled-components
 - ApolloClient
 - Jest
-- ~~Redux~~
+- Redux (I wanted to use apollo for the local state management)
 - Web Payment API for filling the form
 
 ### Backend

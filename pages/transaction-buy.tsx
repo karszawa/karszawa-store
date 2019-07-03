@@ -11,6 +11,10 @@ import Router from "next/router";
 import ItemThumbnailCard from "~/components/common/items/ItemThumbnaiCardl";
 import { getImageUrl } from "~/lib/graphcool";
 import BackNavigation from "~/components/common/BackNavigation";
+import { useSelector } from "react-redux";
+import { RootState } from "./slices/store";
+import Link from "next/link";
+import { A } from "~/components/common/Anchor";
 
 interface TransactionBuyProps {
   id: string;
@@ -55,6 +59,7 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
     // but there are no page which corresponds to it...
     Router.push("/items");
   }, [data, error, loading]);
+  const counter = useSelector((state: RootState) => state.counter.value);
 
   if (loading) {
     return <span>loading</span>;
@@ -69,6 +74,8 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
   if (!item) {
     return <span>(404)</span>;
   }
+
+  const userHasEnoughCoin = item.price <= counter || true;
 
   return (
     <DefaultLayout>
@@ -95,7 +102,21 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
             })
           }}
         />
-        <PayButton onClick={onClickPayButton}>Pay</PayButton>
+        <GuideText>
+          {userHasEnoughCoin ? (
+            `You have ${counter} KZC. Pay ${item.price} KZC instead of paying JPY?`
+          ) : (
+            <span>
+              You have only {counter} KZC.{" "}
+              <Link href="/mine">
+                <LinkText>Go to the mine and do mining.</LinkText>
+              </Link>
+            </span>
+          )}
+        </GuideText>
+        <PayButton onClick={onClickPayButton} disabled={!userHasEnoughCoin}>
+          Pay
+        </PayButton>
       </Content>
     </DefaultLayout>
   );
@@ -120,6 +141,14 @@ const PayButton = styled.button`
   max-width: 400px;
   align-self: center;
   width: 80%;
+`;
+
+const GuideText = styled.p`
+  align-self: center;
+`;
+
+const LinkText = styled(A)`
+  text-decoration: underline;
 `;
 
 export default TransactionBuy;
