@@ -16,6 +16,7 @@ https://karszawa-store.siqvare.now.sh
 - Jest
 - Redux (I wanted to use apollo for the local state management)
 - Web Payment API for filling the form
+- quicklinks
 
 ### Backend
 
