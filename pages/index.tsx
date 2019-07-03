@@ -10,6 +10,7 @@ const Index: React.SFC<{}> = () => {
     <DefaultLayout>
       <Head>
         <title>{SERVICE_NAME}</title>
+        <meta name="Description" content="sitemap"></meta>
       </Head>
       <h1>karszawa-store</h1>
       <LinkContainer>

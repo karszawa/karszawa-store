@@ -18,6 +18,7 @@ const Items: React.FC<{}> = () => {
     <DefaultLayout>
       <Head>
         <title>items | {SERVICE_NAME}</title>
+        <meta name="Description" content={`${SERVICE_NAME} | items`}></meta>
       </Head>
       <H1>items</H1>
       <ItemShowcase items={(data && data.allItems) || []} loading={loading} />

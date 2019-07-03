@@ -34,6 +34,11 @@ const ItemsId: React.FC<ItemsIdProps> = ({ id }: ItemsIdProps) => {
     <DefaultLayout>
       <Head>
         <title>{item ? `${item.name} | ${SERVICE_NAME}` : SERVICE_NAME}</title>
+        <meta
+          name="Description"
+          content={`${SERVICE_NAME}${item &&
+            ` | ${item.name} | ${item.description}`}`}
+        ></meta>
       </Head>
       <Content>
         <BackNavigation href="/items" text="Back to the list" />

@@ -83,6 +83,10 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
         <title>
           Checkout - {item.name} | {SERVICE_NAME}
         </title>
+        <meta
+          name="Description"
+          content={`${SERVICE_NAME} | ${item.name} | ${item.description}`}
+        ></meta>
       </Head>
       <Content>
         <BackNavigation

@@ -10,6 +10,7 @@ const Mine: React.FC<{}> = () => {
     <DefaultLayout>
       <Head>
         <title>mine | {SERVICE_NAME}</title>
+        <meta name="Description" content={`${SERVICE_NAME} | Mining...`}></meta>
       </Head>
       <H1>Mine</H1>
       <Content>
