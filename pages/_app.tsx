@@ -23,6 +23,14 @@ class MyApp extends App<AppProps> {
     return { pageProps };
   }
 
+  componentDidMount() {
+    if (typeof window !== "undefined") {
+      import("quicklink").then(module => {
+        module.default();
+      });
+    }
+  }
+
   render() {
     const { Component, pageProps, store, apolloClient } = this.props;
 
