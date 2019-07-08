@@ -4,7 +4,7 @@ You can buy karszawa goods here.
 
 https://karszawa-store.siqvare.now.sh
 
-## Tech Stack
+## Technical stack
 
 ### Frontend
 
@@ -40,7 +40,7 @@ npm run test
 ## Deploy
 
 ```
-now
+npm run deploy
 ```
 
 ## TODO
@@ -53,8 +53,12 @@ now
 - [x] Document
 - [x] Test
 
-## 難しかったこと
+## Difficulties
 
-- GraphQL のモックテストどうやる？
-- GraphQL のクエリの型付
-- now.shでホストすればNextのserverいらないということになかなか気づけなかった
+- About GraphQL
+  - add types to queries
+  - local state management
+  - mocking
+- About server
+  - Once, I implemented express server only for handling url parameters
+  - But, `now` helps me develop and deploy
