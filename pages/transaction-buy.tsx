@@ -48,7 +48,7 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
       shippingOptions: [
         {
           id: "standard",
-          label: "🚛 Ground Shipping (2 days)",
+          label: "🐌 Snails Shipping (∞ days)",
           amount: { currency: "JPY", value: "270" },
           selected: true
         }
