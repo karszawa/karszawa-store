@@ -145,6 +145,9 @@ const PayButton = styled.button`
   max-width: 400px;
   align-self: center;
   width: 80%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+  border-radius: 4px;
 `;
 
 const GuideText = styled.p`

@@ -44,6 +44,7 @@ const Container = styled.div`
 const Img = styled.img`
   width: 200px;
   height: 200px;
+  max-width: 40vw;
   object-fit: cover;
   border-radius: 4px;
 `;
@@ -83,6 +84,7 @@ const loadingProps = {
 const LoadingImg = styled.div`
   width: 200px;
   height: 200px;
+  max-width: 40vw;
   border-radius: 4px;
   ${loadingProps}
 `;
