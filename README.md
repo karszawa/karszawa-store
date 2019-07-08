@@ -24,6 +24,12 @@ https://karszawa-store.siqvare.now.sh
 - Hosted on now.sh
 - Graphcool as GraphQL server and datastore.
 
+### Enhancement
+
+- Chrome devtools
+- React-axe chrome extension
+- remove.bg to create favicon
+
 ## Development
 
 ```
