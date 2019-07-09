@@ -12,7 +12,8 @@
     "now-build": "npm run build",
     "deploy": "now",
     "test": "jest",
-    "lint": "eslint --fix \"pages/**.tsx\" \"src/**/*.tsx\" \"src/**/*.ts\""
+    "lint": "eslint --fix \"pages/**.tsx\" \"src/**/*.tsx\" \"src/**/*.ts\"",
+    "upgrade-interactive": "npm-check --update"
   },
   "author": "Hiroaki KARASAWA",
   "license": "ISC",
@@ -69,6 +70,7 @@
     "jest": "^24.8.0",
     "jest-dom": "^3.5.0",
     "now": "^15.6.2",
+    "npm-check": "^5.9.0",
     "prettier": "^1.18.2",
     "redux-devtools-extension": "^2.13.8",
     "ts-jest": "^24.0.2",
