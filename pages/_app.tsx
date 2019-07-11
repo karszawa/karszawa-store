@@ -25,12 +25,10 @@ class MyApp extends NextApp<AppProps & WithApolloClientProps> {
     return { pageProps };
   }
 
-  componentDidMount() {
-    if (typeof window !== "undefined") {
-      import("quicklink").then(module => {
-        module.default();
-      });
-    }
+  async componentDidMount() {
+    const { default: quicklink } = await import("quicklink");
+
+    quicklink();
   }
 
   render() {
