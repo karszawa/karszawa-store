@@ -4,8 +4,9 @@ import { SERVICE_NAME } from "~/constants/domain";
 import Head from "next/head";
 import styled from "styled-components";
 import Mining from "~/components/common/Mining";
+import { NextPage } from "next";
 
-const Mine: React.FC<{}> = () => {
+const Mine: NextPage<{}> = () => {
   return (
     <DefaultLayout>
       <Head>

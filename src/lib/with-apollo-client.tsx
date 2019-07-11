@@ -5,21 +5,21 @@ import initApollo from "./init-apollo";
 import Head from "next/head";
 import { renderToString } from "react-dom/server";
 import { getMarkupFromTree } from "react-apollo";
-import { NextAppContext } from "next/app";
+import NextApp, { AppContext } from "next/app";
+import { NormalizedCacheObject, ApolloClient } from "apollo-boost";
 
-export default (
-  App: React.ComponentType<any> & { getInitialProps?: Function }
-) => {
-  return class Apollo extends React.Component {
+export interface WithApolloClientProps {
+  apolloClient: ApolloClient<NormalizedCacheObject>;
+}
+
+export default (App: typeof NextApp) => {
+  return class Apollo extends NextApp<WithApolloClientProps> {
     static displayName = "withApollo(App)";
 
-    static async getInitialProps(ctx: NextAppContext) {
+    static async getInitialProps(ctx: AppContext) {
       const { Component, router } = ctx;
 
-      let appProps = {};
-      if (App.getInitialProps) {
-        appProps = await App.getInitialProps(ctx);
-      }
+      const appProps = await App.getInitialProps(ctx);
 
       // Run all GraphQL queries in the component tree
       // and extract the resulting data
@@ -59,11 +59,11 @@ export default (
       };
     }
 
-    apolloClient: any = null;
+    apolloClient: ApolloClient<NormalizedCacheObject> = null;
 
     constructor(props: any) {
       super(props);
-      this.apolloClient = initApollo((props as any).apolloState);
+      this.apolloClient = initApollo(props.apolloState);
     }
 
     render() {

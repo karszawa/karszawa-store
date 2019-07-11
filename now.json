@@ -8,8 +8,6 @@
     { "src": "static/**", "use": "@now/static" }
   ],
   "routes": [
-    { "src": "/items/(?<id>[^/]+)$", "dest": "/items-id?id=$id" },
-    { "src": "/transaction/buy", "dest": "/transaction-buy" },
     {
       "src": "^/service-worker.js$",
       "dest": "/_next/static/service-worker.js",

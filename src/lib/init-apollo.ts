@@ -1,10 +1,15 @@
 // https://github.com/zeit/next.js/blob/canary/examples/with-apollo/lib/init-apollo.js
 
-import { ApolloClient, InMemoryCache, HttpLink } from "apollo-boost";
+import {
+  ApolloClient,
+  InMemoryCache,
+  HttpLink,
+  NormalizedCacheObject
+} from "apollo-boost";
 import fetch from "isomorphic-unfetch";
 import { BASE_URL } from "~/lib/graphcool";
 
-let apolloClient = null;
+let apolloClient: ApolloClient<NormalizedCacheObject> = null;
 
 function create(initialState: any = {}) {
   // Check out https://github.com/zeit/next.js/pull/4611 if you want to use the AWSAppSyncClient

@@ -4,8 +4,9 @@ import DefaultLayout from "~/components/layouts/default";
 import Head from "next/head";
 import { SERVICE_NAME } from "~/constants/domain";
 import styled from "styled-components";
+import { NextPage } from "next";
 
-const Index: React.SFC<{}> = () => {
+const Index: NextPage<{}> = () => {
   return (
     <DefaultLayout>
       <Head>

@@ -28,7 +28,7 @@ const ItemDetail: React.FC<ItemDetailProps> = ({
     <Container>
       <H1>{name}</H1>
       <Img src={imageUrl} alt={name} />
-      <Link href={`/transaction/buy?itemId=${id}`}>
+      <Link href={`/transactions/buy?itemId=${id}`}>
         <BuyA>Buy!</BuyA>
       </Link>
       <Description>{description}</Description>

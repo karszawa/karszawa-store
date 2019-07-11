@@ -6,8 +6,9 @@ import { GetItemsData, GET_ITEMS } from "~/queries/items";
 import styled from "styled-components";
 import Head from "next/head";
 import { SERVICE_NAME } from "~/constants/domain";
+import { NextPage } from "next";
 
-const Items: React.FC<{}> = () => {
+const Items: NextPage<{}> = () => {
   const { data, error, loading } = useQuery<GetItemsData>(GET_ITEMS);
 
   if (error) {

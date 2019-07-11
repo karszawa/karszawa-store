@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-apollo";
 import DefaultLayout from "~/components/layouts/default";
 import { GetItemData, GET_ITEM } from "~/queries/items";
-import { NextContext } from "next";
+import { NextPage, NextPageContext } from "next";
 import Head from "next/head";
 import { SERVICE_NAME } from "~/constants/domain";
 import styled from "styled-components";
@@ -11,11 +11,11 @@ import ItemDetail, {
 } from "~/components/common/items/ItemDetail";
 import BackNavigation from "~/components/common/BackNavigation";
 
-interface ItemsIdProps {
+interface Params {
   id: string;
 }
 
-const ItemsId: React.FC<ItemsIdProps> = ({ id }: ItemsIdProps) => {
+const ItemsId: NextPage<Params> = ({ id }: Params) => {
   const { data, error, loading } = useQuery<GetItemData>(GET_ITEM, {
     variables: { id }
   });
@@ -59,9 +59,9 @@ const ItemsId: React.FC<ItemsIdProps> = ({ id }: ItemsIdProps) => {
   );
 };
 
-(ItemsId as any).getInitialProps = (ctx: NextContext) => {
+ItemsId.getInitialProps = async (ctx: NextPageContext) => {
   return {
-    id: ctx.query.id
+    id: ctx.query.id.toString()
   };
 };
 

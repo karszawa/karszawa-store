@@ -1,5 +1,4 @@
 import React, { useCallback } from "react";
-import { NextContext } from "next";
 import Head from "next/head";
 import { SERVICE_NAME } from "~/constants/domain";
 import DefaultLayout from "~/components/layouts/default";
@@ -12,17 +11,16 @@ import ItemThumbnailCard from "~/components/common/items/ItemThumbnaiCardl";
 import { getImageUrl } from "~/lib/graphcool";
 import BackNavigation from "~/components/common/BackNavigation";
 import { useSelector } from "react-redux";
-import { RootState } from "./slices/store";
+import { RootState } from "~/slices/store";
 import Link from "next/link";
 import { A } from "~/components/common/Anchor";
+import { NextPage, NextPageContext } from "next";
 
-interface TransactionBuyProps {
+interface Params {
   id: string;
 }
 
-const TransactionBuy: React.FC<TransactionBuyProps> = ({
-  id
-}: TransactionBuyProps) => {
+const TransactionBuy: NextPage<Params> = ({ id }: Params) => {
   const { data, error, loading } = useQuery<GetItemData>(GET_ITEM, {
     variables: { id }
   });
@@ -90,7 +88,7 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
       </Head>
       <Content>
         <BackNavigation
-          href={`/items?id=${item.id}`}
+          href={`/items/${id}`}
           as={`/items/${id}`}
           text="Back to the list"
         />
@@ -126,9 +124,9 @@ const TransactionBuy: React.FC<TransactionBuyProps> = ({
   );
 };
 
-(TransactionBuy as any).getInitialProps = (ctx: NextContext) => {
+TransactionBuy.getInitialProps = async (ctx: NextPageContext) => {
   return {
-    id: ctx.query.itemId
+    id: ctx.query.itemId.toString()
   };
 };
 

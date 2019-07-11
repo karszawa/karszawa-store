@@ -1,10 +1,10 @@
 import React from "react";
 import Document, {
-  NextDocumentContext,
   Html,
   Main,
   Head,
-  NextScript
+  NextScript,
+  DocumentContext
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
@@ -19,7 +19,7 @@ const ResetCSS: React.FC<{}> = () => (
 );
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: NextDocumentContext) {
+  static async getInitialProps(ctx: DocumentContext) {
     // with styled-components example
     // https://github.com/zeit/next.js/blob/master/examples/with-styled-components/pages/_document.js
     const sheet = new ServerStyleSheet();
@@ -34,18 +34,19 @@ export default class MyDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
-        styles: (
-          <>
-            <ResetCSS />
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-        head: (
-          <>
-            <link rel="icon" type="image/png" href="/static/favicon.png" />
-          </>
-        )
+        styles: [
+          <ResetCSS key="reset-css" />,
+          <>{sheet.getStyleElement()}</>,
+          ...initialProps.styles
+        ],
+        head: [
+          <link
+            key="favicon"
+            rel="icon"
+            type="image/png"
+            href="/static/favicon.png"
+          />
+        ]
       };
     } finally {
       sheet.seal();

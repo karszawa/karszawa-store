@@ -68,3 +68,11 @@ npm run deploy
 - About server
   - Once, I implemented express server only for handling url parameters
   - But, `now` helps me develop and deploy
+
+## Update to Next 9
+
+- Directory based dynamic routing で now.json の routes が減った
+- URL パラメタとコンポーネントパラメタの対応をページごとのファイルに書けるようになった
+  - いくら便利でも now 依存が減るのは嬉しい
+  - Link 要素に as がないと動かない
+- 型の変更が多い
